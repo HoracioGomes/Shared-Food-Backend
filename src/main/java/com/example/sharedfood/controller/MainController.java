@@ -1,15 +1,19 @@
 package com.example.sharedfood.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.sharedfood.data.OrdersVO;
+import com.example.sharedfood.services.OrdersService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/shared-food")
 public class MainController {
+    @Autowired
+    OrdersService ordersService;
 
-    @GetMapping
-    public String teste() {
-        return "Teste ok";
+    @PostMapping("/calculate")
+    public ResponseEntity<OrdersVO> calculateFriendsDues(@RequestBody OrdersVO ordersVO) {
+        return ResponseEntity.ok(ordersService.calculateDues(ordersVO));
     }
 }

@@ -7,17 +7,17 @@ public class FriendOrderVO implements Serializable {
 
     private Long id;
     private String name;
-    private Double orderValue;
+    private Double totalItemsValue;
     private Double amountDue = 0.0;
     private String paymentLink;
 
     public FriendOrderVO() {
     }
 
-    public FriendOrderVO(Long id, String name, Double orderValue, Double amountDue, String paymentLink) {
+    public FriendOrderVO(Long id, String name, Double totalItemsValue, Double amountDue, String paymentLink) {
         this.id = id;
         this.name = name;
-        this.orderValue = orderValue;
+        this.totalItemsValue = totalItemsValue;
         this.amountDue = amountDue;
         this.paymentLink = paymentLink;
     }
@@ -38,12 +38,12 @@ public class FriendOrderVO implements Serializable {
         this.name = name;
     }
 
-    public Double getOrderValue() {
-        return orderValue;
+    public Double getTotalItemsValue() {
+        return totalItemsValue;
     }
 
-    public void setOrderValue(Double orderValue) {
-        this.orderValue = orderValue;
+    public void setTotalItemsValue(Double totalItemsValue) {
+        this.totalItemsValue = totalItemsValue;
     }
 
     public Double getAmountDue() {
